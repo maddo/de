@@ -455,16 +455,16 @@ func main() {
 					oldFilename := buff.Filename
 					if evtBuff == buff.Tagline {
 						if eDot.Start == eDot.End {
-							actions.FindNextOrOpenTag(position.CurTagWordStart, position.CurTagWordEnd, &buff, viewport)
+							actions.TagPlumbOrFindNext(position.CurTagWordStart, position.CurTagWordEnd, &buff, viewport)
 						} else {
-							actions.FindNextOrOpenTag(position.TagDotStart, position.TagDotEnd, &buff, viewport)
+							actions.TagPlumbOrFindNext(position.TagDotStart, position.TagDotEnd, &buff, viewport)
 						}
 					} else {
 						if eDot.Start == eDot.End {
-							actions.FindNextOrOpen(position.CurWordStart, position.CurWordEnd, evtBuff, viewport)
+							actions.PlumbOrFindNext(position.CurWordStart, position.CurWordEnd, evtBuff, viewport)
 
 						} else {
-							actions.FindNextOrOpen(position.DotStart, position.DotEnd, evtBuff, viewport)
+							actions.PlumbOrFindNext(position.DotStart, position.DotEnd, evtBuff, viewport)
 						}
 					}
 					if oldFilename != buff.Filename {
